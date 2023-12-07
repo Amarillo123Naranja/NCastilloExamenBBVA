@@ -1,0 +1,42 @@
+﻿@model ML.Producto
+@{
+    ViewBag.Title = "Producto";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 class="text-center">Productos</h2>
+<br />
+<br />
+
+
+<div class="row">
+    @foreach (ML.Producto producto in Model.Productos)
+    {
+
+
+        <div class="col-md-4">
+
+            <div class="card" style="width: 18rem;">
+                <img src="@producto.Imagen" class="card-img-top" alt="Cargando">
+                <div class="card-body">
+                    <h3 class="card-title"><b>@producto.Nombre</b></h3>
+                    <h4 class="card-text"><b>$ @producto.Precio</b></h4>
+                    <a class="btn btn-dark" href="@Url.Action("Compra", "Producto", new { IdProducto = producto.IdProducto })">Comprar</a>
+                </div>
+
+            </div>
+
+        </div>
+    }
+</div>
+      
+
+
+
+
+        <br />
+        <br />
+
+
+
